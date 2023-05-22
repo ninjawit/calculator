@@ -20,16 +20,18 @@ function divide(a, b) {
 }
 
 function operate(num1, num2, opr) {
-    if (opr === '+') {
-        return add(num1, num2);
-    }
-    else if(opr === '-') {
-        return subtract(num1, num2);
-    }
-    else if(opr === '*') {
-        return multiply(num1, num2);
-    }
-    else if (opr === '/') {
-        return divide(num1, num2);
+    switch(opr) {
+        case '+':
+            return add(num1, num2);
+            break;
+        case '-':
+            return subtract(num1, num2);
+            break;
+        case '*':
+            return multiply(num1, num2);
+            break;
+        case '/':
+            return divide(num1, num2);
+            break;
     }
 }
