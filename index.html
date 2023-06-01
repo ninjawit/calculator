@@ -1,28 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Calculator</title>
-        <link rel="stylesheet" href="./style.css"/>
-    </head>
-    <body>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <div id="calculator">
         <div id="display">1234567890</div>
-        <button id="seven">7</button>
-        <button id="eight">8</button>
-        <button id="nine">9</button>
-        <button id="four">4</button>
-        <button id="five">5</button>
-        <button id="six">6</button>
-        <button id="one">1</button>
-        <button id="two">2</button>
-        <button id="three">3</button>
-        <button id="zero">0</button>
-        <button id="add">+</button>
-        <button id="subtract">-</button>
-        <button id="multiply">*</button>
-        <button id="divide">/</button>
-        <button id="equals">=</button>
-        <button id="clear">C</button>
-        <script src="./script.js"></script>
-    </body>
+        <div id="buttons">
+            <div class="button-rows" id="top-row-buttons">
+                <button id="clear">C</button>
+                <button id="backspace">&#8592</button>
+                <button id="divide">/</button>
+            </div>
+            <div class="button-rows" id="second-row-buttons">
+                <button id="seven">7</button>
+                <button id="eight">8</button>
+                <button id="nine">9</button>
+                <button id="multiply">*</button>
+            </div>
+            <div class="button-rows" id="third-row-buttons">
+                <button id="four">4</button>
+                <button id="five">5</button>
+                <button id="six">6</button>
+                <button id="subtract">-</button>
+            </div>
+            <div class="button-rows" id="fourth-row-buttons">
+                <button id="one">1</button>
+                <button id="two">2</button>
+                <button id="three">3</button>
+                <button id="add">+</button>
+            </div>
+            <div class="button-rows" id="fifth-row-buttons">
+                <button id="zero">0</button>
+                <button id="decimal">.</button>
+                <button id="equals">=</button>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
 </html>
