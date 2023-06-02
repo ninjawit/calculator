@@ -4,16 +4,29 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: monospace;
 }
 
 button {
     background-color: #D37C32;
     flex: 1;
+    height: 100px;
+    max-width: 100px;
+    margin-left: 4px;
+    margin-right: 4px;
+    border-radius: 50%;
+    border: solid white 1px;
+    font-size: 24px;
 }
 
 .button-rows {
     display: flex;
+    justify-content: center;
     margin: 0 12px 12px 12px;
+}
+
+#empty {
+    visibility: hidden;
 }
 
 #calculator {
@@ -27,9 +40,11 @@ button {
 #display {
     display: flex;
     align-items: center;
+    align-self: center;
     justify-content: flex-end;
     height: 100px;
-    margin: 12px;
+    width: 408px;
+    margin: 16px 12px 12px 12px;
     padding-right: 12px;
     background-color: #CCCCCC;
     font-size: 48px;
@@ -43,4 +58,10 @@ button {
 
 #equals {
     flex: 2;
+    max-width: 208px;
+    border-radius: 52px;
+}
+
+#top-row-buttons {
+    margin-top: 10px;
 }
