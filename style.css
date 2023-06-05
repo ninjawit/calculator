@@ -8,15 +8,26 @@ body {
 }
 
 button {
-    background-color: #D37C32;
+    font-size: 2.2em;
     flex: 1;
     height: 100px;
     max-width: 100px;
     margin-left: 4px;
     margin-right: 4px;
     border-radius: 50%;
-    border: solid white 1px;
-    font-size: 24px;
+    background-color: #D37C32;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    border: solid #444 1px;
+    box-shadow: 0 1px 0 #666, 
+                0 2px 0 #444, 
+                0 8px 8px rgba(0, 0, 0, 0.6),
+                inset 0px 0px 8px 0px rgba(0, 0, 0, 0.6);
+}
+
+button:active {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5),
+                inset 6px 6px 6px rgba(0, 0, 0, 0.5);
 }
 
 .button-rows {
@@ -35,6 +46,9 @@ button {
     display: flex;
     flex-direction: column;
     background-color: #4C4E52;
+    border: solid black 2px;
+    border-radius: 12px;
+    box-shadow: 4px 4px 8px 4px black;
 }
 
 #display {
@@ -47,13 +61,20 @@ button {
     margin: 16px 12px 12px 12px;
     padding-right: 12px;
     background-color: #CCCCCC;
-    font-size: 48px;
+    border-radius: 12px;
+    box-shadow: inset 2px 2px 3px black;
+    font-size: 3.25em;
 }
 
 #buttons {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+}
+
+#clear {
+    background-color: darkred;
+    color: white;
 }
 
 #equals {
