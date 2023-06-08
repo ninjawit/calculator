@@ -2,6 +2,18 @@ var firstNumber;
 var secondNumber;
 var operator;
 
+const display = document.querySelector("#display");
+const clear = document.querySelector("#clear");
+
+function clearDisplay() {
+    display.innerHTML = '';
+    firstNumber = '';
+    secondNumber = '';
+    operator = '';
+    return display;
+}
+
+clear.addEventListener("click", clearDisplay);
 
 function add(a, b) {
     return a + b;
