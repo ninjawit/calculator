@@ -36,8 +36,12 @@ button:active {
     margin: 0 12px 12px 12px;
 }
 
-#empty {
+.empty {
     visibility: hidden;
+}
+
+.number, #decimal {
+    background-color: rgb(155, 185, 182);
 }
 
 #calculator {
@@ -77,7 +81,7 @@ button:active {
     background-color: darkred;
 }
 
-#equals {
+#zero {
     flex: 2;
     max-width: 208px;
     border-radius: 52px;
