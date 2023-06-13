@@ -1,6 +1,9 @@
-var firstNumber;
-var secondNumber;
-var sign;
+/* Works for two numbers now, or when always using equals button to evaluate.  Does NOT yet work correctly when attempting to evaluate multiple numbers using only operator buttons.
+*/
+
+let firstNumber = "";
+let secondNumber = "";
+let sign = "";
 
 const display = document.querySelector("#display");
 const clear = document.querySelector("#clear");
@@ -11,6 +14,12 @@ const equals = document.querySelector("#equals");
 numbers.forEach(number => {
     number.addEventListener('click', () => {
         numberClick(number);
+        if (!sign) {
+            firstNumber = parseInt(display.innerHTML);
+        }
+        else {
+            secondNumber = parseInt(display.innerHTML);
+        }
     });
 });
 
@@ -70,28 +79,16 @@ function clearDisplay() {
     return display;
 }
 
-/* Current one step behind and doesn't display right with multiple operators.  Eg. 9 * 9 - 6 displays as 9*96 = 81 Also want to figure out how to not clear display until start entering in second number
-*/
 operators.forEach(operator => {
     operator.addEventListener('click', () => {
         sign = operator.innerHTML;
-        if (firstNumber && secondNumber) {
-            operate(firstNumber, secondNumber, sign);
-        }
-        else if (firstNumber) { // not empty, null, undefined
-            secondNumber = Number(display.innerHTML);
-        }
-        else {
-            firstNumber = Number(display.innerHTML);
-            display.innerHTML = '';
-        }
+        display.innerHTML = "";
     });
 });
 
-// Currently returns NaN
 equals.addEventListener('click', () => {
     operate(firstNumber, secondNumber, sign);
-    firstNumber = Number(display.innerHTML);
+    firstNumber = parseInt(display.innerHTML);
 })
 
 function add(a, b) {
@@ -107,7 +104,12 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
-    return a / b;
+    if (b === 0) {
+        display.innerHTML = 'Naughty naughty';
+    }
+    else {
+        return a / b;
+    }
 }
 
 function operate(num1, num2, opr) {
