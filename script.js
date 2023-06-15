@@ -1,8 +1,3 @@
-/* 
-    - Works for multiple operators without equals button press, but doesn't display answer between each calculation
-    - Want to be able to start a new calculation after hitting equals button and then entering a new number
-*/
-
 let firstNumber = "";
 let secondNumber = "";
 let sign = "";
@@ -27,11 +22,12 @@ decimal.addEventListener('click', () => {
 equals.addEventListener('click', () => {
     operate(firstNumber, secondNumber, sign);
     firstNumber = parseFloat(display.innerHTML);
+    secondNumber = "";
 });
 
 numbers.forEach(number => {
     number.addEventListener('click', () => {
-        //clearDisplay();
+        clearDisplay();
         numberClick(number);
         if (!sign) {
             firstNumber = parseFloat(display.innerHTML);
@@ -48,6 +44,7 @@ operators.forEach(operator => {
         if (firstNumber && secondNumber && sign) {
             operate(firstNumber, secondNumber, sign);
             firstNumber = parseFloat(display.innerHTML);
+            secondNumber = "";
         }
             
         sign = operator.innerHTML;
@@ -114,7 +111,7 @@ function multiply(a, b) {
 
 function divide(a, b) {
     if (b === 0) {
-        return display.innerHTML = 'Naughty naughty';
+        return display.innerHTML = 'naughty naughty';
     }
     else {
         return a / b;
@@ -158,9 +155,9 @@ function textSize() {
     }
 }
 
-// Only when entering second number of a calculation
+// Clear only when entering second number of a calculation
 function clearDisplay() {
-    if (sign) {
+    if (sign && !secondNumber) {
         display.innerHTML = "";
     }
 }
